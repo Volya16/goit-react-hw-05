@@ -8,9 +8,9 @@
   width: 100%;
   z-index: 1000;
   padding: 24px 32px;
-  background-color: #f6f6f6;
-  box-shadow: 0 4px 6px #0000001a;
+  background-color: rgb(153, 62, 243);
   margin-bottom: 24px;
+  color: rgb(245, 245, 246);
 }
 
 .nav {
@@ -19,15 +19,17 @@
 }
 
 .link {
-  color: rgb(16, 16, 16);
+  color: rgb(245, 245, 246);
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .link:hover {
-  color: #646cff;
+  color: rgb(67, 15, 240);
 }
 
 .active {
-  color: #646cff;
+  color: rgb(67, 15, 240);
   font-weight: 600;
-  border-bottom: 3px solid #646cff;
+  border-bottom: 3px solid rgb(67, 15, 240);
 }

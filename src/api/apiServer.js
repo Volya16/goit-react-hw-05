@@ -12,7 +12,7 @@ const api = axios.create({
     Authorization: `Bearer ${API.token}`,
   },
   params: {
-    language: "uk-UA",
+    language: "de-DE",
   },
 });
 
@@ -20,5 +20,31 @@ export const fetchTrendingMovies = async () => {
   const { data } = await api.get("/trending/movie/day", {
     params: { page: 1 },
   });
+  return data.results;
+};
+
+// api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
+
+export const fetchMoviesByQuery = async (query) => {
+  const { data } = await api.get(`/search/movie?include_adult=false`, {
+    params: { page: 1, query },
+  });
+  return data.results;
+};
+
+export const fetchMoviesById = async (id) => {
+  const { data } = await api.get(`/movie/${id}`);
+  return data;
+};
+
+export const fetchMovieCreditsById = async (id) => {
+  const { data } = await api.get(`/movie/${id}/credits
+`);
+  return data.cast;
+};
+
+export const fetchMovieReviewsById = async (id) => {
+  const { data } = await api.get(`/movie/${id}/reviews
+`);
   return data.results;
 };

@@ -27,9 +27,9 @@ export default function HomePage() {
   }, []);
   return (
     <>
-      <ErrorMessage />
+      {error && <ErrorMessage />}
       <Loader loading={loading} />
-      <MovieList movies={trendingMovies} />
+      {trendingMovies.length > 0 && <MovieList movies={trendingMovies} />}
     </>
   );
 }
